@@ -28,3 +28,17 @@ select
         as systematic_status
 from bookings
 where payment_status is null;
+
+
+
+-- Query 4
+select
+    b.booking_id,
+    u.full_name,
+    m.fixture,
+    b.total_cost
+from bookings b
+inner join users u
+    on b.user_id = u.user_id
+inner join matches m
+    on b.match_id = m.match_id;
